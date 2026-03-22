@@ -329,11 +329,11 @@ export default function Home() {
             <div className="flex flex-wrap gap-3">
               <a
                 className={primaryLinkClass}
-                href="https://github.com/zeroclaw-labs/zeroclaw"
+                href="https://www.easyclaw.pro/en"
                 target="_blank"
                 rel="noreferrer"
               >
-                View Official Repo
+                One-Click Deploy
                 <ArrowUpRight className="size-4" />
               </a>
               <a

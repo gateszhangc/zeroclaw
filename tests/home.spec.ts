@@ -12,8 +12,8 @@ test("homepage renders the ZeroClaw research narrative", async ({ page }) => {
     })
   ).toBeVisible();
   await expect(
-    page.getByRole("link", { name: /View Official Repo/i })
-  ).toHaveAttribute("href", "https://github.com/zeroclaw-labs/zeroclaw");
+    page.getByRole("link", { name: /One-Click Deploy/i })
+  ).toHaveAttribute("href", "https://www.easyclaw.pro/en");
   await expect(
     page.getByRole("heading", { level: 2, name: "What is ZeroClaw?" })
   ).toBeVisible();
