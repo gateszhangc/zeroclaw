@@ -42,7 +42,7 @@ export const siteConfig = {
   name: readPublicEnv("NEXT_PUBLIC_PROJECT_NAME") ?? DEFAULT_PROJECT_NAME,
   title: "ZeroClaw Guide",
   description:
-    "Independent ZeroClaw keyword hub covering architecture, setup, security posture, provider support, and deployment fit.",
+    "Independent ZeroClaw guide for operators evaluating architecture, security defaults, provider support, SQLite memory, and low-overhead deployment.",
   url: siteUrl,
   host: extractHost(siteUrl),
   keywords: siteKeywords,

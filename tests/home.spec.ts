@@ -4,14 +4,15 @@ test("homepage renders the ZeroClaw research narrative", async ({ page }) => {
   await page.goto("/", { waitUntil: "domcontentloaded" });
 
   await expect(page).toHaveTitle(/ZeroClaw Guide/i);
+  await expect(page.getByText("Official sources reviewed March 22, 2026")).toBeVisible();
   await expect(
     page.getByRole("heading", {
       level: 1,
-      name: /ZeroClaw is the fast, small, security-minded path to autonomous agents\./i,
+      name: /ZeroClaw is the lightweight, security-first runtime for autonomous AI agents\./i,
     })
   ).toBeVisible();
   await expect(
-    page.getByRole("link", { name: /View Repository/i })
+    page.getByRole("link", { name: /View Official Repo/i })
   ).toHaveAttribute("href", "https://github.com/zeroclaw-labs/zeroclaw");
   await expect(
     page.getByRole("heading", { level: 2, name: "What is ZeroClaw?" })
@@ -19,7 +20,7 @@ test("homepage renders the ZeroClaw research narrative", async ({ page }) => {
   await expect(
     page.getByRole("heading", {
       level: 2,
-      name: "ZeroClaw keyword topics worth ranking for",
+      name: "High-intent ZeroClaw topics to cover first",
     })
   ).toBeVisible();
 });
@@ -58,6 +59,12 @@ test("homepage exposes canonical metadata and structured data", async ({
   expect(schemaText).toContain('"@type":"WebSite"');
   expect(schemaText).toContain('"@type":"WebPage"');
   expect(schemaText).toContain('"@type":"FAQPage"');
+  const pageHtml = await page.content();
+  expect(pageHtml).toContain("googletagmanager.com/gtag/js?id=G-YRKCJS2L3P");
+  expect(pageHtml).toContain("google-analytics");
+  expect(pageHtml).toContain("G-YRKCJS2L3P");
+  expect(pageHtml).toContain("microsoft-clarity");
+  expect(pageHtml).toContain("vz9tk8vxfa");
 });
 
 test("robots and sitemap expose crawl signals", async ({ request }) => {
@@ -67,6 +74,7 @@ test("robots and sitemap expose crawl signals", async ({ request }) => {
   const robotsText = await robotsResponse.text();
   expect(robotsText).toContain("User-Agent: *");
   expect(robotsText).toContain("Allow: /");
+  expect(robotsText).toContain("Host: zeroclaw.lol");
   expect(robotsText).toContain("Sitemap: https://zeroclaw.lol/sitemap.xml");
 
   const sitemapResponse = await request.get("/sitemap.xml");

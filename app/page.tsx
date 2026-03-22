@@ -27,27 +27,27 @@ const secondaryLinkClass =
 const quickFacts = [
   {
     value: "22+",
-    label: "providers",
+    label: "provider routes",
     detail:
-      "Current public materials say ZeroClaw supports 22+ model providers and OpenAI-compatible endpoints.",
+      "Hosted APIs, OpenAI-compatible endpoints, and local-model workflows keep vendor choice flexible.",
   },
   {
     value: "SQLite",
-    label: "memory core",
+    label: "local memory",
     detail:
-      "Keyword search, vector similarity, and hybrid ranking stay local instead of requiring a heavy external stack.",
+      "FTS5 keyword retrieval, vector search, and hybrid ranking stay built in instead of bolted on later.",
   },
   {
     value: "3",
-    label: "autonomy modes",
+    label: "control modes",
     detail:
-      "Readonly, supervised, and full modes make it easier to match execution power to operational risk.",
+      "ReadOnly, Supervised, and Full let teams match execution power to operational risk.",
   },
   {
-    value: "Pi-ready",
-    label: "runtime fit",
+    value: "129+",
+    label: "security tests",
     detail:
-      "The project positions itself for Mac, Linux, VPS deployments, and low-power devices such as Raspberry Pi.",
+      "Current repository materials highlight automated safety coverage around sandboxing, allowlists, and policy boundaries.",
   },
 ] as const;
 
@@ -55,22 +55,22 @@ const overviewCards = [
   {
     title: "What is ZeroClaw?",
     body:
-      "A Rust-first autonomous personal assistant infrastructure project focused on low-overhead operation, flexible providers, and production-friendly controls.",
+      "A compact runtime and control layer for autonomous agents, with modular providers, channels, memory, tools, and deployment options.",
   },
   {
     title: "How ZeroClaw stores context",
     body:
-      "The public profile highlights SQLite plus FTS5 keyword retrieval, vector similarity, and hybrid ranking instead of a sprawling memory stack.",
+      "SQLite stays at the center, combining FTS5 keyword retrieval, vector similarity, and hybrid ranking so memory remains local and portable.",
   },
   {
-    title: "How ZeroClaw handles security",
+    title: "How ZeroClaw enforces safety",
     body:
-      "Gateway pairing, sandboxing, path scoping, and allowlist controls are part of the documented security posture.",
+      "Security defaults center on sandboxing, path scoping, allowlists, localhost-first access, and approval-aware autonomy levels.",
   },
   {
-    title: "Where ZeroClaw fits best",
+    title: "Who ZeroClaw is for",
     body:
-      "Its strongest positioning is automation and server-side operations where startup speed, footprint, and self-hosting pragmatism matter.",
+      "The strongest fit is self-hosted automation, low-power infrastructure, and long-running agent workflows that need discipline rather than spectacle.",
   },
 ] as const;
 
@@ -78,32 +78,32 @@ const keywordTopics = [
   {
     keyword: "ZeroClaw architecture",
     answer:
-      "ZeroClaw follows a trait-based design so core pieces can be swapped through configuration while keeping the runtime lean.",
+      "The architecture is trait-driven and modular, so teams can swap core components without turning the runtime into a heavyweight platform.",
   },
   {
     keyword: "ZeroClaw installation",
     answer:
-      "The public setup path is straightforward: install Rust, build a release, run interactive onboarding, then launch the daemon.",
+      "Installation follows a practical operator path: install Rust, build the release binary, complete onboarding, and keep the agent running as a daemon.",
   },
   {
     keyword: "ZeroClaw security",
     answer:
-      "The public materials emphasize a local-first network posture plus path scoping and explicit pairing for bearer-token access.",
+      "Security is built around constrained execution: localhost-first access, pairing, sandboxing, path scoping, allowlists, and explicit autonomy boundaries.",
   },
   {
     keyword: "ZeroClaw providers",
     answer:
-      "Provider flexibility is part of the core pitch, with current materials describing 22+ providers and OpenAI-compatible APIs.",
+      "Provider support is intentionally broad, covering 22+ providers, OpenAI-compatible endpoints, and local-model workflows when teams need routing flexibility.",
   },
   {
     keyword: "ZeroClaw Raspberry Pi",
     answer:
-      "The framework is explicitly presented as suitable for constrained hardware, which makes Raspberry Pi and lightweight VPS deployments part of its appeal.",
+      "ZeroClaw is explicitly positioned for constrained hardware, which is why Raspberry Pi and lightweight VPS deployments show up so often in its deployment story.",
   },
   {
     keyword: "ZeroClaw vs OpenClaw",
     answer:
-      "The current public profile frames OpenClaw as stronger for interaction-heavy local experiences, while ZeroClaw is positioned for automation-first workloads.",
+      "OpenClaw reads more interaction-first, while ZeroClaw is the stronger fit when the job is long-running automation with lower overhead and tighter operational control.",
   },
 ] as const;
 
@@ -112,29 +112,29 @@ const workflowSteps = [
     step: "01",
     title: "Install Rust",
     detail:
-      "Use the standard Rust toolchain setup if the environment does not already have Rust.",
+      "Install the standard Rust toolchain if the machine is not already provisioned.",
     command: "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh",
   },
   {
     step: "02",
     title: "Build the release",
     detail:
-      "Clone the repository, build the optimized binary, and install it into your path.",
+      "Clone the repository, compile the optimized binary, and install the CLI.",
     command:
-      "git clone https://github.com/zeroclaw-labs/zeroclaw.git && cargo build --release",
+      "git clone https://github.com/zeroclaw-labs/zeroclaw.git && cd zeroclaw && cargo build --release && cargo install --path . --force",
   },
   {
     step: "03",
     title: "Run onboarding",
     detail:
-      "Complete interactive setup to configure providers, channels, and gateway pairing.",
+      "Configure providers, channels, identity, and secure gateway pairing in one pass.",
     command: "zeroclaw onboard --interactive",
   },
   {
     step: "04",
     title: "Start the daemon",
     detail:
-      "Run ZeroClaw as a background agent, then inspect its status from the CLI.",
+      "Keep ZeroClaw online for long-running work, then inspect runtime health from the CLI.",
     command: "zeroclaw daemon && zeroclaw status",
   },
 ] as const;
@@ -148,32 +148,32 @@ const faqs = [
   {
     question: "Can ZeroClaw run on low-power hardware?",
     answer:
-      "Based on the current public profile, yes. Raspberry Pi and lightweight VPS deployments are explicitly part of the stated runtime fit.",
+      "Yes. ZeroClaw is positioned for constrained environments, including Raspberry Pi and lightweight VPS deployments.",
   },
   {
     question: "What makes ZeroClaw attractive for self-hosting?",
     answer:
-      "The message is consistent across the public materials: small footprint, fast startup, local-first storage, and controls that map well to long-running automation.",
+      "It promises a rare combination: compact runtime, fast startup, local memory, configurable autonomy, and safety boundaries that map to real operator concerns.",
   },
   {
     question: "What does ZeroClaw support for observability?",
     answer:
-      "The official profile mentions Prometheus and OpenTelemetry support for production monitoring workflows.",
+      "Current official materials point to Prometheus and OpenTelemetry support for production monitoring and telemetry workflows.",
   },
   {
     question: "Where should a keyword site focus first?",
     answer:
-      "Start with the queries people repeatedly ask: what ZeroClaw is, how to install it, how its memory works, what security controls exist, and where it fits better than interaction-first alternatives.",
+      "Cover the questions closest to evaluation and deployment: what ZeroClaw is, how it installs, how memory works, which safety controls exist, and when it beats more interaction-first alternatives.",
   },
 ] as const;
 
 const sourceLinks = [
   {
-    label: "ZeroClaw public profile",
+    label: "Official ZeroClaw profile",
     href: "https://zeroclaw.bot/",
   },
   {
-    label: "ZeroClaw GitHub repository",
+    label: "ZeroClaw GitHub repo",
     href: "https://github.com/zeroclaw-labs/zeroclaw",
   },
 ] as const;
@@ -269,9 +269,9 @@ export default function Home() {
               priority
             />
             <div className="min-w-0">
-              <p className="eyebrow">ZeroClaw / keyword hub</p>
+              <p className="eyebrow">ZeroClaw / operator guide</p>
               <p className="truncate text-sm font-medium uppercase tracking-[0.22em] text-foreground/78">
-                editorial research landing page
+                independent research page
               </p>
             </div>
           </Link>
@@ -305,23 +305,24 @@ export default function Home() {
                 variant="outline"
                 className="border-foreground/15 bg-white/55 text-foreground/75"
               >
-                Public sources checked March 21, 2026
+                Official sources reviewed March 22, 2026
               </Badge>
             </div>
 
             <div className="space-y-5">
-              <p className="eyebrow">Fast. Small. Autonomous.</p>
+              <p className="eyebrow">Fast runtime. Tight controls.</p>
               <h1 className="max-w-4xl text-5xl leading-none font-heading tracking-[-0.06em] text-balance text-foreground sm:text-6xl lg:text-7xl">
-                ZeroClaw is the fast, small,{" "}
+                ZeroClaw is the lightweight,{" "}
                 <span className="font-accent italic text-signal">
-                  security-minded
+                  security-first
                 </span>{" "}
-                path to autonomous agents.
+                runtime for autonomous AI agents.
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-foreground/74 sm:text-xl">
-                This page is built around the ZeroClaw queries people actually
-                search for: what it is, how it works, how to install it, how its
-                memory behaves, and why it fits low-overhead automation stacks.
+                If you are evaluating ZeroClaw for real workloads, start here.
+                This guide covers the questions that matter before deployment:
+                architecture, autonomy modes, provider support, memory design,
+                security controls, and low-overhead deployment fit.
               </p>
             </div>
 
@@ -332,7 +333,7 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer"
               >
-                View Repository
+                View Official Repo
                 <ArrowUpRight className="size-4" />
               </a>
               <a
@@ -341,7 +342,7 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Open Public Profile
+                Read Official Profile
                 <ArrowUpRight className="size-4" />
               </a>
             </div>
@@ -370,14 +371,14 @@ export default function Home() {
             <div className="relative">
               <div className="flex items-start justify-between gap-4">
                 <div className="space-y-2">
-                  <p className="eyebrow">Operator brief</p>
+                  <p className="eyebrow">At a glance</p>
                   <h2 className="text-3xl leading-tight font-heading tracking-[-0.04em] text-foreground">
-                    ZeroClaw field sheet
+                    Why operators look at ZeroClaw
                   </h2>
                   <p className="max-w-md text-sm leading-7 text-foreground/70">
-                    Public materials consistently frame ZeroClaw as a
-                    Rust-native framework for people who want autonomous agents
-                    without carrying a bloated runtime.
+                    The official profile and repository tell a consistent story:
+                    fast startup, lean deployment, modular integrations, and
+                    tighter safety controls than the usual agent toy box.
                   </p>
                 </div>
 
@@ -433,12 +434,11 @@ zeroclaw daemon`}</code>
                   What is ZeroClaw?
                 </h2>
                 <p className="mt-5 max-w-2xl text-lg leading-8 text-foreground/74">
-                  ZeroClaw is a public autonomous assistant project with a
-                  clear operational message: stay fast, stay small, and let
-                  teams control how much autonomy the agent is allowed to use.
-                  The public profile points to provider flexibility, SQLite
-                  memory, security boundaries, and observability as the core
-                  reasons to care.
+                  ZeroClaw is a Rust-native agent framework built for teams that
+                  care more about reliable execution than flashy demos. The
+                  value proposition is simple: launch fast, keep the footprint
+                  lean, constrain the blast radius, and decide exactly how much
+                  autonomy the agent gets.
                 </p>
 
                 <div className="signal-divider my-8" />
@@ -466,30 +466,32 @@ zeroclaw daemon`}</code>
                 <Card className="border-foreground/10 bg-[#161411] text-[#f8f2e9] shadow-none">
                   <CardHeader>
                     <CardTitle className="text-[#f8f2e9]">
-                      Best fit for ZeroClaw
+                      Who should pick ZeroClaw?
                     </CardTitle>
                     <CardDescription className="text-[#f8f2e9]/64">
-                      Use public positioning to sharpen the page message.
+                      This is where the positioning is strongest.
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4 text-sm leading-7 text-[#f8f2e9]/80">
                     <p>
-                      Strongest match: automation-heavy operators, self-hosters,
-                      and teams that care about low-power deployment targets.
+                      Best fit: operators, self-hosters, and infra-minded teams
+                      that want autonomous execution without dragging in a
+                      bloated runtime.
                     </p>
                     <p>
-                      Weaker match: people primarily chasing front-end local
-                      interaction experiments rather than daemon-style workflow
-                      execution.
+                      Weaker fit: teams whose top priority is interaction-heavy
+                      desktop UX or front-end experimentation rather than
+                      daemon-style automation.
                     </p>
                   </CardContent>
                 </Card>
 
                 <Card className="border-foreground/10 bg-white/58 shadow-none">
                   <CardHeader>
-                    <CardTitle>Search intent cluster</CardTitle>
+                    <CardTitle>High-intent search cluster</CardTitle>
                     <CardDescription>
-                      These are the high-intent themes worth covering first.
+                      These are evaluation-stage queries, not empty awareness
+                      traffic.
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="flex flex-wrap gap-2">
@@ -523,12 +525,12 @@ zeroclaw daemon`}</code>
             <div>
               <p className="eyebrow">Topic cluster</p>
               <h2 className="mt-3 text-4xl leading-none font-heading tracking-[-0.05em] text-foreground sm:text-5xl">
-                ZeroClaw keyword topics worth ranking for
+                High-intent ZeroClaw topics to cover first
               </h2>
             </div>
             <p className="max-w-md text-sm leading-7 text-foreground/66">
-              Each card answers a real search question and gives the homepage a
-              clear editorial spine instead of generic product marketing.
+              Each card answers an evaluation-stage question, so the homepage
+              reads like a serious operator guide instead of generic AI filler.
             </p>
           </div>
 
@@ -567,9 +569,9 @@ zeroclaw daemon`}</code>
                 </h2>
               </div>
               <p className="max-w-xl text-sm leading-7 text-foreground/66">
-                This flow mirrors the current public profile: toolchain first,
-                release build second, interactive onboarding third, and daemon
-                mode last.
+                This is the practical onboarding path reflected in current
+                official materials: toolchain first, build second, onboarding
+                third, daemon mode last.
               </p>
             </div>
 
@@ -605,8 +607,8 @@ zeroclaw daemon`}</code>
                 ZeroClaw FAQ
               </h2>
               <p className="mt-4 text-lg leading-8 text-foreground/72">
-                Short answers to the search questions that repeatedly surface
-                around ZeroClaw.
+                Direct answers for teams evaluating ZeroClaw for self-hosted or
+                production-style automation.
               </p>
             </div>
 
@@ -632,10 +634,10 @@ zeroclaw daemon`}</code>
             <div>
               <p className="eyebrow">Sources</p>
               <p className="mt-3 max-w-2xl text-sm leading-7 text-foreground/68">
-                This is an independent editorial page based on public ZeroClaw
-                materials checked on March 21, 2026. It is structured to target
-                high-intent keyword searches without pretending to be the
-                official project website.
+                This independent guide is grounded in official ZeroClaw
+                materials reviewed on March 22, 2026. It is written to capture
+                high-intent evaluation searches without pretending to be the
+                official project site.
               </p>
             </div>
 
